@@ -1,11 +1,13 @@
 import BobRossClient from '../src/BobRossClient'
 
-const client = new BobRossClient('https://test.com')
+const client = new BobRossClient({
+  serverUrl: 'https://test.com'
+})
 
 test('instantiation fails without a serverUrl param', () => {
   expect.assertions(1)
   try {
-    new BobRossClient()
+    new BobRossClient({})
   } catch (e) {
     expect(e.message).toMatch(/require/)
   }

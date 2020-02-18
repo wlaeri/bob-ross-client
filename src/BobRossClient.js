@@ -2,10 +2,10 @@ import invariant from 'invariant'
 import _ from 'lodash'
 
 class BobRossClient {
-  constructor (serverUrl, hmacs) {
-    invariant(serverUrl, `Bob Ross Client requires a serverUrl.`)
-    this.serverUrl = serverUrl
-    this.hmacs = hmacs || {}
+  constructor (params) {
+    invariant(params.serverUrl, `Bob Ross Client requires a serverUrl.`)
+    this.serverUrl = params.serverUrl
+    this.hmacs = params.hmacs || {}
   }
 
   getUrl(hash, options) {
